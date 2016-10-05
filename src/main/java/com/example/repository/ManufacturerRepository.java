@@ -11,10 +11,11 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.example.model.Manufacturer;
 
-
+//TODO: Why here the service is againg exposed, because implementation class already does.
 @RepositoryRestResource(path="/datarest")
 public interface ManufacturerRepository extends MongoRepository<Manufacturer, Integer> {
 	
+	//implementation is given by mongo repository, so the method returns manufacturer based on ID
 	List<Manufacturer> findByStartDateBefore(@Param("startDate")@DateTimeFormat(iso = ISO.DATE)Date date);
 
 }

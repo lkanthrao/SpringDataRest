@@ -19,8 +19,14 @@ public class ManufracturerController {
 	@Autowired
 	private ManufacturerRepository manufacturerRepository;
 
+	// expose a service to retreive manufacturer by startDate
 	@RequestMapping(value = "/findByStartDate/{startDate}")
-	public List<Manufacturer> findByStartDate(@DateTimeFormat(iso = ISO.DATE) @PathVariable Date startDate) {
+	public List<Manufacturer> findByStartDate(
+			@DateTimeFormat(iso = ISO.DATE) @PathVariable Date startDate) {
+
+		// convert the param to datatime format so that the Before and After
+		// filter can be applied
+
 		return manufacturerRepository.findByStartDateBefore(startDate);
 	}
 
