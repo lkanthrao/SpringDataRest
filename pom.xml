@@ -11,6 +11,8 @@
 	<name>SpringDataRest</name>
 	<description>Demo project for Spring Boot</description>
 
+	<!-- the below parent tag will download all the required/appropriate versions 
+		of jar/dependency for the project, for instance loggers, db drivers etc. -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -59,6 +61,9 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
+
+		<!-- Note: Just by adding this two dependencies swagger UI can be generated, 
+			off course adding an annotation @EnableSwaggerUI in Spring Application -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
